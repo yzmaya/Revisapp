@@ -123,6 +123,14 @@ onAuthStateChanged(auth, async (user) => {
 
     var nombreID = localStorage.getItem("IDname");
 
+    const contenedorQR = document.getElementById('contenedorQR');
+const formulario = document.getElementById('formulario');
+
+const QR = new QRCode(contenedorQR);
+
+
+	QR.makeCode(uid);
+
     if (nombreID == null){
       //console.log("a")
       } else {
@@ -155,6 +163,7 @@ var usuarioRaiz = "users/" + userID + "/tareas";
 var miUusarioo = "users/" + userID;
 
 // Initialize Firebase
+
 
 
 
@@ -235,6 +244,7 @@ export const updateTask = (id, newFields) =>
   updateDoc(doc(db, usuarioRaiz, id), newFields);
 
 export const getTasks = () => getDocs(collection(db, userID));
+
 
 
 

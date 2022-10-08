@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   //  console.log(task);
   document.getElementById('nombre').innerHTML = task;
 
-
+/*
 
   onGetTareas((querySnapshot) => {
     // tasksContainer2.innerHTML = "";
@@ -80,22 +80,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
     querySnapshot.forEach((doc) => {
       const task = doc.data();
-      /*
-            tasksContainer.innerHTML += `
-            <div class="card card-body mt-2 border-primary">
-          <h3 class="h5">${task.cantidad} ${task.title}</h3>
-          <p>${task.description}</p>
-          <div>
-            <button class="btn btn-primary btn-delete" data-id="${doc.id}">
-              🗑 Eliminar
-            </button>
-            <button class="btn btn-secondary btn-edit" data-id="${doc.id}">
-              🖉 Editar
-            </button>
-          </div>
-        </div>`;
-          });
-      */
+     
       tasksContainer.innerHTML += `
       <tr >
         <td>${task.date}</td>    
@@ -189,7 +174,10 @@ taskForm.addEventListener("submit", async (e) => {
 });
 
 
+*/
 
+
+});
 
 
 
