@@ -6,12 +6,14 @@
 -->
 <html>
 	<head>
-		<title>Astral by HTML5 UP</title>
+		<title>Acceso de Evento BNI</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assetshome/css/main.css" />
 		<noscript><link rel="stylesheet" href="assetshome/css/noscript.css" /></noscript>
 		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 		<style>
 			.contenedor {
 		  max-width: 100%;
@@ -66,6 +68,7 @@
 					<nav id="nav">
 						<a href="#" class="icon solid fa-user-circle"><span>Usuario</span></a>
 						<a href="#work" class="icon solid fa-qrcode"><span>Acceso</span></a>
+						<a href="#escaner" class="icon solid fa-mobile-alt"><span>Escaner</span></a>
 						<a id="cerrar"  href="#contact" class="icon solid fa-power-off"><span>Cerrar Sesión</span></a>
 						<!--<a href="https://twitter.com/ajlkn" class="icon brands fa-twitter"><span>Twitter</span></a>-->
 					</nav>
@@ -96,6 +99,16 @@
 
 									<div id="contenedorQR" class="contenedorQR"></div>
 								  </div>
+								
+							</article>
+
+
+							<article id="escaner" class="panel">
+								<header>
+									<h2>Escaner</h2>
+								</header>
+								<p>lorem ipsum</p>
+								<video id="preview"></video>
 								
 							</article>
 
@@ -140,7 +153,21 @@
 
 		<!-- Scripts -->
 		<script type="module" src="./index.js" type="module"></script>
-   
+		<script type="text/javascript">
+			let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+			scanner.addListener('scan', function (content) {
+			  alert(content);
+			});
+			Instascan.Camera.getCameras().then(function (cameras) {
+			  if (cameras.length > 0) {
+				scanner.start(cameras[0]);
+			  } else {
+				console.error('No cameras found.');
+			  }
+			}).catch(function (e) {
+			  console.error(e);
+			});
+		  </script>
 			<script src="assetshome/js/jquery.min.js"></script>
 			<script src="assetshome/js/browser.min.js"></script>
 			<script src="assetshome/js/breakpoints.min.js"></script>
