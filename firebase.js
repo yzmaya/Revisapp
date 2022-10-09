@@ -238,7 +238,7 @@ export const onGetTareas = (callback) =>
 
 
 export const onGetTareas2 = (callback) =>
-  onSnapshot(collectionGroup(db, destination), callback);
+  onSnapshot(collectionGroup(db, "10"), callback);
 
 
 

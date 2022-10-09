@@ -14,6 +14,7 @@ import {
     cerrarSesion,
     getTasks,
     auth,
+    onGetTareas2
   
   } from "./firebase.js";
   
@@ -60,7 +61,7 @@ import {
     document.getElementById('nombre').innerHTML = task;
 
 
-    onGetEvents((querySnapshot) => {
+    onGetTareas2((querySnapshot) => {
         tasksContainer.innerHTML = "";
     
         querySnapshot.forEach((doc) => {
