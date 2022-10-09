@@ -154,19 +154,7 @@
 		<!-- Scripts -->
 		<script type="module" src="./index.js" type="module"></script>
 		<script type="text/javascript">
-			let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-			scanner.addListener('scan', function (content) {
-			  alert(content);
-			});
-			Instascan.Camera.getCameras().then(function (cameras) {
-			  if (cameras.length > 0) {
-				scanner.start(cameras[0]);
-			  } else {
-				console.error('No cameras found.');
-			  }
-			}).catch(function (e) {
-			  console.error(e);
-			});
+			
 		  </script>
 			<script src="assetshome/js/jquery.min.js"></script>
 			<script src="assetshome/js/browser.min.js"></script>

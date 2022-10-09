@@ -45,6 +45,9 @@ export const auth = getAuth();
 
 
 
+
+var destination = localStorage.getItem("destino");
+
 export const cerrarSesion = () =>
   signOut(auth).then(() => {
     // Sign-out successful.
@@ -195,6 +198,8 @@ console.log(usuarioRaiz)
  * @param {string} cantidad the description of the Task
  * @param {string} uid the description of the Task
  * 
+ * @param {string} content the title of the Task
+ * 
  * 
  * @param {string} nombre the description of the Task
  
@@ -208,9 +213,16 @@ export const saveTask = (date, title, category, description, cantidad, uid) =>
   addDoc(collection(db, usuarioRaiz), {date, title, category, description, cantidad, uid });
 
 
+  export const saveDate = (date, hour, nombre, content) =>
+  setDoc(doc(db, "users/"+content+"/acceso/"+date), {date, hour, nombre, content});
+
+ 
 
 export const onGetTasks = (callback) =>
   onSnapshot(collection(db, usuarioRaiz), callback);
+
+ export const onGetEvents = (callback) =>
+ onSnapshot(collection(db, "users"), callback);
 
 
 
@@ -239,6 +251,8 @@ export const deleteTask = (id) => deleteDoc(doc(db, usuarioRaiz, id));
 export const getTask = (id) => getDoc(doc(db, usuarioRaiz, id));
 
 export const getTasking = () => getDoc(doc(db, "users", userID));
+
+export const getTaskingName = (id) => getDoc(doc(db, "users", id));
 
 export const updateTask = (id, newFields) =>
   updateDoc(doc(db, usuarioRaiz, id), newFields);
