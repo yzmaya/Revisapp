@@ -69,7 +69,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
 
 
- 
+
   // document.getElementById('nombre2').innerHTML = task;
 
   /*
@@ -215,8 +215,9 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       const docu2 = await getTaskingName(content);
       const username = docu2.data().name;
       saveDate(fechaComp, horaComp, username, content);
-     // console.log(username)
+      // console.log(username)
       // return task2
+      alert("¡Registro exitoso!, Bienvenid@ " + username)
     }
 
     f();
@@ -224,7 +225,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
     console.log(horaComp)
 
-    
+
 
 
     // alert("este es mi mensaje" + content);

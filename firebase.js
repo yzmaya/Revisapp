@@ -134,37 +134,38 @@ onAuthStateChanged(auth, async (user) => {
 
 
     var x = document.getElementById("escaner");
- console.log("hey " + uid)
-      if (uid == "iZoRtRPl3xcKSq8EH5U8snDGQzm2") {
-    
-          x.style.display = '';
-    
-      
-        console.log("que?");
-      } else {
-        console.log("no esta pasando nada bro")
-      }
+    console.log("hey " + uid)
+    if (uid == "iZoRtRPl3xcKSq8EH5U8snDGQzm2") {
 
 
-      if (nombreID == null) {
-        //console.log("a")
-      } else {
-        setDoc(doc(db, "users", uid), {
-          name: nombreID,
+      x.style.display = '';
 
-        });
-      }
 
-      // window.location.href = 'home.html'
-      // ...
+      console.log("que?");
     } else {
-      // User is signed out
-      console.log("usuario NO logueado");
-
-      // ...
+      console.log("no esta pasando nada bro")
     }
-    //window.location.href = 'home.html';
-  });
+
+
+    if (nombreID == null) {
+      //console.log("a")
+    } else {
+      setDoc(doc(db, "users", uid), {
+        name: nombreID,
+
+      });
+    }
+
+    // window.location.href = 'home.html'
+    // ...
+  } else {
+    // User is signed out
+    console.log("usuario NO logueado");
+
+    // ...
+  }
+  //window.location.href = 'home.html';
+});
 
 
 var pruebas = "/users/nOQszCqK8vUqRZ08RkheqwDibgy2/tareas"

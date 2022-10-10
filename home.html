@@ -5,114 +5,116 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Acceso de Evento BNI</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assetshome/css/main.css" />
-		<noscript><link rel="stylesheet" href="assetshome/css/noscript.css" /></noscript>
-		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-		<style>
-			.contenedor {
-		  max-width: 100%;
-		  width: 400px;
-		  margin: 0px auto;
-	  }
-	  
-	  .formulario input[type='text'] {
-		  padding: 20px;
-		  border: none;
-		  background: #fff;
-		  width: 100%;
-		  border-radius: 5px;
-		  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-		  font-size: 20px;
-		  margin-bottom: 20px;
-		  font-family: 'Open Sans', sans-serif;
-	  }
-	  
-	  .formulario .btn {
-		  width: 100%;
-		  border: none;
-		  background: rgb(0, 0, 0);
-		  color: #fff;
-		  cursor: pointer;
-		  padding: 20px;
-		  font-size: 20px;
-		  border-radius: 5px;
-		  font-family: 'Open Sans', sans-serif;
-	  }
-	  
-	  .formulario .btn:hover {
-		  background: #3e14b2;
-	  }
-	  
-	  .contenedorQR {
-		  display: flex;
-		  justify-content: center;
-		  padding: 0px 0;
-	  }
-	  
-	  
-	  
-		  </style>
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper-->
-			<div id="wrapper">
+<head>
+	<title>Acceso de Evento BNI</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assetshome/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assetshome/css/noscript.css" />
+	</noscript>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+	<style>
+		.contenedor {
+			max-width: 100%;
+			width: 400px;
+			margin: 0px auto;
+		}
 
-				<!-- Nav -->
-					<nav id="nav">
-						<a href="#" class="icon solid fa-user-circle"><span>Usuario</span></a>
-						<a href="#work" class="icon solid fa-qrcode"><span>Acceso</span></a>
-						<a id="escaner" href="#escaner"  style="display: none;" class="icon solid fa-mobile-alt"><span>Escaner</span></a>
-						<a id="cerrar"  href="#contact" class="icon solid fa-power-off"><span>Cerrar Sesión</span></a>
-						<!--<a href="https://twitter.com/ajlkn" class="icon brands fa-twitter"><span>Twitter</span></a>-->
-					</nav>
+		.formulario input[type='text'] {
+			padding: 20px;
+			border: none;
+			background: #fff;
+			width: 100%;
+			border-radius: 5px;
+			box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+			font-size: 20px;
+			margin-bottom: 20px;
+			font-family: 'Open Sans', sans-serif;
+		}
 
-				<!-- Main -->
-					<div id="main">
+		.formulario .btn {
+			width: 100%;
+			border: none;
+			background: rgb(0, 0, 0);
+			color: #fff;
+			cursor: pointer;
+			padding: 20px;
+			font-size: 20px;
+			border-radius: 5px;
+			font-family: 'Open Sans', sans-serif;
+		}
 
-						<!-- Me -->
-							<article id="home" class="panel intro">
-								<header>
-									<h1 id="nombre"></h1>
-									<p>Bienvenid@</p>
-									
-								</header>
-								<a href="#work" class="jumplink pic">
-									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="imageshome/me.jpg" alt="" />
-								</a>
-							</article>
+		.formulario .btn:hover {
+			background: #3e14b2;
+		}
 
-						<!-- Work -->
-							<article id="work" class="panel">
-								<header>
-									<h2>Acceso</h2>
-								</header>
-								<div class="contenedor">
-  
+		.contenedorQR {
+			display: flex;
+			justify-content: center;
+			padding: 0px 0;
+		}
+	</style>
+</head>
 
-									<div id="contenedorQR" class="contenedorQR"></div>
-								  </div>
-								
-							</article>
+<body class="is-preload">
+
+	<!-- Wrapper-->
+	<div id="wrapper">
+
+		<!-- Nav -->
+		<nav id="nav">
+			<a href="#" class="icon solid fa-user-circle"><span>Usuario</span></a>
+			<a href="#work" class="icon solid fa-qrcode"><span>Acceso</span></a>
+			<a id="escaner" href="#escaner" style="display: none;"
+				class="icon solid fa-mobile-alt"><span>Escaner</span></a>
+			<a id="cerrar" href="#contact" class="icon solid fa-power-off"><span>Cerrar Sesión</span></a>
+			<!--<a href="https://twitter.com/ajlkn" class="icon brands fa-twitter"><span>Twitter</span></a>-->
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Me -->
+			<article id="home" class="panel intro">
+				<header>
+					<h1 id="nombre"></h1>
+					<p>Bienvenid@</p>
+
+				</header>
+				<a href="#work" class="jumplink pic">
+					<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+					<img src="imageshome/me.jpg" alt="" />
+				</a>
+			</article>
+
+			<!-- Work -->
+			<article id="work" class="panel">
+				<header>
+					<h2>Acceso</h2>
+				</header>
+				<div class="contenedor">
 
 
-							<article id="escaner" class="panel">
-								<header>
-									<h2>Escaner</h2>
-								</header>
-								<p>lorem ipsum</p>
-								<video id="preview"></video>
-								
-							</article>
+					<div id="contenedorQR" class="contenedorQR"></div>
+				</div>
 
-						<!-- Contact -->
+			</article>
+
+
+			<article id="escaner" class="panel">
+				<header>
+					<h2>Escaner</h2>
+				</header>
+
+				<video id="preview"></video>
+
+			</article>
+
+			<!-- Contact 
 							<article id="contact" class="panel">
 								<header>
 									<h2>Contact Me</h2>
@@ -139,28 +141,30 @@
 									</div>
 								</form>
 							</article>
+-->
+		</div>
 
-					</div>
+		<!-- Footer -->
+		<div id="footer">
+			<ul class="copyright">
+				<li>&copy; Untitled.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
 
-				<!-- Footer -->
-					<div id="footer">
-						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
+	</div>
 
-			</div>
+	<!-- Scripts -->
+	<script type="module" src="./index.js" type="module"></script>
+	<script type="text/javascript">
 
-		<!-- Scripts -->
-		<script type="module" src="./index.js" type="module"></script>
-		<script type="text/javascript">
-			
-		  </script>
-			<script src="assetshome/js/jquery.min.js"></script>
-			<script src="assetshome/js/browser.min.js"></script>
-			<script src="assetshome/js/breakpoints.min.js"></script>
-			<script src="assetshome/js/util.js"></script>
-			<script src="assetshome/js/main.js"></script>
+	</script>
+	<script src="assetshome/js/jquery.min.js"></script>
+	<script src="assetshome/js/browser.min.js"></script>
+	<script src="assetshome/js/breakpoints.min.js"></script>
+	<script src="assetshome/js/util.js"></script>
+	<script src="assetshome/js/main.js"></script>
 
-	</body>
+</body>
+
 </html>
