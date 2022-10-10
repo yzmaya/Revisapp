@@ -77,7 +77,7 @@ export const crearCuenta = (auth, email, password, nombre) =>
       console.log(userCredential.user.uid);
       localStorage.setItem("UserID", userCredential.user.uid);
       localStorage.setItem("IDname", nombre);
-       window.location.href = 'home.html';
+      window.location.href = 'home.html';
       // console.log(IDname);
 
 
@@ -99,7 +99,7 @@ export const iniciarSesion = (auth, email, password) =>
       const user = userCredential.user;
       localStorage.setItem("UserID", userCredential.user.uid);
       localStorage.removeItem('IDname');
-         window.location.href = 'home.html';
+      window.location.href = 'home.html';
       // ...
     })
     .catch((error) => {
@@ -128,32 +128,43 @@ onAuthStateChanged(auth, async (user) => {
     var nombreID = localStorage.getItem("IDname");
 
     const contenedorQR = document.getElementById('contenedorQR');
-const formulario = document.getElementById('formulario');
+    const formulario = document.getElementById('formulario');
+    const QR = new QRCode(contenedorQR);
+    QR.makeCode(uid);
 
-const QR = new QRCode(contenedorQR);
+
+    var x = document.getElementById("escaner");
+ console.log("hey " + uid)
+      if (uid == "iZoRtRPl3xcKSq8EH5U8snDGQzm2") {
+    
+          x.style.display = '';
+    
+      
+        console.log("que?");
+      } else {
+        console.log("no esta pasando nada bro")
+      }
 
 
-	QR.makeCode(uid);
-
-    if (nombreID == null){
-      //console.log("a")
+      if (nombreID == null) {
+        //console.log("a")
       } else {
         setDoc(doc(db, "users", uid), {
           name: nombreID,
-      
+
         });
       }
-      
-    // window.location.href = 'home.html'
-    // ...
-  } else {
-    // User is signed out
-    console.log("usuario NO logueado");
 
-    // ...
-  }
-  //window.location.href = 'home.html';
-});
+      // window.location.href = 'home.html'
+      // ...
+    } else {
+      // User is signed out
+      console.log("usuario NO logueado");
+
+      // ...
+    }
+    //window.location.href = 'home.html';
+  });
 
 
 var pruebas = "/users/nOQszCqK8vUqRZ08RkheqwDibgy2/tareas"
@@ -211,19 +222,19 @@ console.log(usuarioRaiz)
 
 
 export const saveTask = (date, title, category, description, cantidad, uid) =>
-  addDoc(collection(db, usuarioRaiz), {date, title, category, description, cantidad, uid });
+  addDoc(collection(db, usuarioRaiz), { date, title, category, description, cantidad, uid });
 
 
-  export const saveDate = (date, hour, nombre, content) =>
-  setDoc(doc(db, "users/"+content+"/acceso/"+date), {date, hour, nombre, content});
+export const saveDate = (date, hour, nombre, content) =>
+  setDoc(doc(db, "users/" + content + "/acceso/" + date), { date, hour, nombre, content });
 
- 
+
 
 export const onGetTasks = (callback) =>
   onSnapshot(collection(db, usuarioRaiz), callback);
 
- export const onGetEvents = (callback) =>
- onSnapshot(collection(db, "users"), callback);
+export const onGetEvents = (callback) =>
+  onSnapshot(collection(db, "users"), callback);
 
 
 
@@ -252,6 +263,9 @@ export const deleteTask = (id) => deleteDoc(doc(db, usuarioRaiz, id));
 export const getTask = (id) => getDoc(doc(db, usuarioRaiz, id));
 
 export const getTasking = () => getDoc(doc(db, "users", userID));
+
+
+
 
 export const getTaskingName = (id) => getDoc(doc(db, "users", id));
 

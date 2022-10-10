@@ -66,6 +66,10 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   const task = docu.data().name;
   //  console.log(task);
   document.getElementById('nombre').innerHTML = task;
+
+
+
+ 
   // document.getElementById('nombre2').innerHTML = task;
 
   /*
