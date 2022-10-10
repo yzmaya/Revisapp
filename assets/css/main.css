@@ -857,6 +857,7 @@ button,
       -ms-flex-direction: column;
       flex-direction: column; }
       #signup-form2 input[type="type"],
+      #signup-form2 input[type="text"],
       #signup-form2 input[type="password"],
       #signup-form2 input[type="email"] {
         width: 100%; }

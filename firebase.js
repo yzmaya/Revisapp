@@ -31,12 +31,13 @@ import {
 
 const firebaseConfig = {
   // Put you credentials here
-  apiKey: "AIzaSyC7toNkMv-wUJiasgVlPy42MQrymuah96o",
-  authDomain: "integrarte-db8c0.firebaseapp.com",
-  projectId: "integrarte-db8c0",
-  storageBucket: "integrarte-db8c0.appspot.com",
-  messagingSenderId: "131854706929",
-  appId: "1:131854706929:web:2192579afe3f4c5515e150"
+  apiKey: "AIzaSyDzF0ymJncSCFY6b4WFnep11wCbX0ZCYZg",
+  authDomain: "eventosbi.firebaseapp.com",
+  projectId: "eventosbi",
+  storageBucket: "eventosbi.appspot.com",
+  messagingSenderId: "1054400885729",
+  appId: "1:1054400885729:web:d3e868ac91a6dc19fa18a0",
+  measurementId: "G-8J71CVH785"
 };
 
 export const app = initializeApp(firebaseConfig);
