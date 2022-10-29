@@ -64,10 +64,17 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
   const docu = await getTasking();
   const task = docu.data().name;
-  //  console.log(task);
+ 
+
+
+  const inputString = docu.id
+  const outputString1 = inputString.slice(1, 4);
+
+
+
   document.getElementById('nombre').innerHTML = task;
 
-
+  document.getElementById('boleto').innerHTML = outputString1;
 
 
   // document.getElementById('nombre2').innerHTML = task;
