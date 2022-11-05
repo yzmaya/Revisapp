@@ -60,6 +60,17 @@ export const cerrarSesion = () =>
   });
 
 
+  export const cerrarSesion2 = () =>
+  signOut(auth).then(() => {
+    // Sign-out successful.
+    localStorage.removeItem('UserID');
+    localStorage.removeItem('IDname');
+    window.location.href = 'registro.html';
+  }).catch((error) => {
+    // An error happened.
+  });
+
+
 
 
 /**
@@ -77,7 +88,7 @@ export const crearCuenta = (auth, email, password, nombre) =>
       console.log(userCredential.user.uid);
       localStorage.setItem("UserID", userCredential.user.uid);
       localStorage.setItem("IDname", nombre);
-      window.location.href = 'home.html';
+      window.location.href = 'home2.html';
       // console.log(IDname);
 
 
@@ -248,10 +259,11 @@ export const onGetTareas = (callback) =>
   onSnapshot(collection(db, "users"), callback);
 
 
-
+  const date = new Date();
+  const currentMonth = date.getMonth() + 1;
 
 export const onGetTareas2 = (callback) =>
-  onSnapshot(collectionGroup(db, "10"), callback);
+  onSnapshot(collectionGroup(db, ""+currentMonth+""), callback);
 
 
 

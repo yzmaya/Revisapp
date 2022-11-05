@@ -11,6 +11,7 @@ import {
   updateTask,
   onGetTareas,
   cerrarSesion,
+  cerrarSesion2,
   getTasks,
   auth,
 
@@ -20,6 +21,7 @@ import {
 const taskForm = document.getElementById("task-form");
 const tasksContainer = document.getElementById("tasks-container");
 const botonCerrar = document.getElementById("cerrar");
+const botonCerrar2 = document.getElementById("cerrar2");
 
 let editStatus = false;
 let id = "";
@@ -53,6 +55,9 @@ botonCerrar.addEventListener("click", async (e) => {
 
 
 
+
+
+
 window.addEventListener("DOMContentLoaded", async (e) => {
   // const querySnapshot = await getTasks();
   // querySnapshot.forEach((doc) => {
@@ -64,7 +69,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
   const docu = await getTasking();
   const task = docu.data().name;
- 
+ console.log(task)
 
 
   const inputString = docu.id
@@ -204,6 +209,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
 
   //lectura de codigos qr
+  /*
   let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
   scanner.addListener('scan', function (content) {
 
@@ -248,8 +254,8 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   });
 
 
+
+*/
+
+
 });
-
-
-
-

@@ -1,7 +1,7 @@
 
 
 import {
-  iniciarSesion,
+
   crearCuenta,
     auth,
    
@@ -10,38 +10,18 @@ import {
   
 
   const formCrearCuenta = document.getElementById("signup-form2");
-  const formIniciarSesion = document.getElementById("signup-form");
+
 
 
   
   // inicio de sesión
-  
-  formIniciarSesion.addEventListener("submit", async (e) => {
-    e.preventDefault();
 
-    const correo = formIniciarSesion["email"];
-    const contrasena = formIniciarSesion["password"];
-    
-  
-   
-   try {
-      //console.log(correo.value)
-      //  console.log(contrasena.value)
-       // localStorage.setItem("IDname", nombre.value);
-       await  iniciarSesion(auth,correo.value,contrasena.value)
-       
-       
-    } catch (error) {
-      console.log(error);
-    }
-    
-  });
 
 
 
 
   //crear cuenta de inicio de sesión
-  /*
+  
   formCrearCuenta.addEventListener("submit", async (e) => {
     e.preventDefault();
     const nombre = formCrearCuenta["name2"];
@@ -65,4 +45,4 @@ import {
     }
   //  window.location.href = 'home.html';
   });
-  */
+  
